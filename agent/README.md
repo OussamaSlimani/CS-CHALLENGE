@@ -36,7 +36,7 @@ A Python app using Tkinter for a GUI that captures network traffic data and save
 2. Create the `.exe` file:
 
    ```bash
-   pyinstaller --onefile --windowed app.py
+   python -m PyInstaller --onefile --windowed main.py
    ```
 
    The `.exe` will be in the `dist` folder.

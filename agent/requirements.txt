@@ -1,0 +1,7 @@
+tkinter
+firebase-admin
+scapy
+time
+datetime
+re
+threading

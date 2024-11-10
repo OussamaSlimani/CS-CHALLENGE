@@ -43,3 +43,19 @@ python app.py
    - Supported commands include port closure, IP blocking, and system updates.
 
 4. **Close the app** to end monitoring.
+
+## Creating an Executable (.exe)
+
+1. Install PyInstaller:
+
+   ```bash
+   pip install pyinstaller
+   ```
+
+2. Create the `.exe` file:
+
+   ```bash
+   python -m PyInstaller --onefile --windowed main.py
+   ```
+
+   The `.exe` will be in the `dist` folder.
