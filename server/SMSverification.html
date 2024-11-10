@@ -306,36 +306,8 @@
               </li>
             </ul>
 
-            <div class="ptb-100">
-              <h2>Login Register</h2>
-              <p>
-                Integrate local and cloud resources, protect user traffic and
-                endpoints, and create custom, scalable network.
-              </p>
-            </div>
+            <div class="ptb-50"></div>
           </div>
-        </div>
-
-        <div
-          class="only-shape banner-shape-1"
-          data-speed="0.04"
-          data-revert="true"
-        >
-          <img src="assets/images/banner/banner-shape-2.png" alt="Image" />
-        </div>
-        <div
-          class="only-shape banner-shape-2"
-          data-speed="0.06"
-          data-revert="true"
-        >
-          <img src="assets/images/banner/banner-shape-1.png" alt="Image" />
-        </div>
-        <div
-          class="only-shape banner-shape-3"
-          data-speed="0.08"
-          data-revert="true"
-        >
-          <img src="assets/images/banner/banner-shape-4.png" alt="Image" />
         </div>
       </div>
       <!-- End Page Banner Area -->
@@ -354,250 +326,133 @@
             <!-- Login Form -->
             <div class="col-lg-6">
               <form class="login-register-form-area login mr-15">
-                <h2>Login</h2>
+                <h2>You will receive a code in your number</h2>
                 <div class="form-group">
-                  <label for="loginEmail">Email</label>
-                  <input
-                    type="email"
-                    id="loginEmail"
-                    class="form-control"
-                    placeholder="Username or email"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="loginPassword">Password</label>
-                  <input
-                    type="password"
-                    id="loginPassword"
-                    class="form-control"
-                    placeholder="Password"
-                  />
-                </div>
-
-                <div class="form-group">
-                  <div
-                    class="forgot d-flex justify-content-between align-items-center"
-                  >
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        value=""
-                        id="flexCheckDefault"
-                      />
-                      <label class="form-check-label" for="flexCheckDefault">
-                        Remember me
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <a href="my-account.html">Forgot password?</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="d-flex align-items-center">
-                  <button type="button" class="default-btn">Log In</button>
-                </div>
-              </form>
-            </div>
-
-            <!-- Register Form -->
-            <div class="col-lg-6">
-              <form class="login-register-form-area register ml-15">
-                <h2>Register</h2>
-                <div class="form-group">
-                  <label for="registerUsername">Username</label>
+                  <label for="loginEmail">Code</label>
                   <input
                     type="text"
-                    id="registerUsername"
+                    id="loginCode"
                     class="form-control"
-                    placeholder="Username"
+                    placeholder="Enter Code.."
                   />
-                </div>
-                <div class="form-group">
-                  <label for="registerEmail">Email</label>
-                  <input
-                    type="email"
-                    id="registerEmail"
-                    class="form-control"
-                    placeholder="Email"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="registerPassword">Password</label>
-                  <input
-                    type="password"
-                    id="registerPassword"
-                    class="form-control"
-                    placeholder="Password"
-                  />
-                </div>
-
-                <div class="form-group">
-                  <p>
-                    The password should be at least eight characters long. To
-                    make it stronger, use upper and lower case letters, numbers,
-                    and symbols like ! " ? $ % ^ & )
-                  </p>
                 </div>
 
                 <div class="d-flex align-items-center">
-                  <button type="button" class="default-btn">Register</button>
+                  <button
+                    type="button"
+                    id="submitCodeButton"
+                    class="default-btn"
+                  >
+                    Submit
+                  </button>
                 </div>
               </form>
             </div>
           </div>
         </div>
-
-        <img
-          src="assets/images/pricing-shape-1.png"
-          class="shape shape-1"
-          alt="Image"
-        />
-        <img
-          src="assets/images/feature-shape-1.png"
-          class="shape shape-2"
-          alt="Image"
-        />
       </div>
-      <!-- Include auth.js -->
-      <script type="module">
-        // Import necessary Firebase SDKs
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-        import {
-          getDatabase,
-          ref,
-          set,
-          get,
-          child,
-        } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
 
-        // Firebase configuration
-        const firebaseConfig = {
-          apiKey: "AIzaSyC7inSQMpCJW7OJL6DdGSl386z56mupYAc",
-          authDomain: "cs-challenge-f4c13.firebaseapp.com",
-          databaseURL: "https://cs-challenge-f4c13-default-rtdb.firebaseio.com",
-          projectId: "cs-challenge-f4c13",
-          storageBucket: "cs-challenge-f4c13.firebasestorage.app",
-          messagingSenderId: "657138044922",
-          appId: "1:657138044922:web:1f6d141e5a5f9f7e1b5e43",
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const db = getDatabase(app);
-
-        // Registration function
-        function registerUser(username, email, password) {
-          if (!username || !email || !password) {
-            displayNotification("All fields are required!", "error");
-            return;
+      <script>
+        // Wait for the DOM to be fully loaded
+        document.addEventListener("DOMContentLoaded", () => {
+          // Function to generate a random code
+          function generateRandomCode() {
+            const length = 6;
+            let result = "";
+            const characters =
+              "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            const charactersLength = characters.length;
+            for (let i = 0; i < length; i++) {
+              result += characters.charAt(
+                Math.floor(Math.random() * charactersLength)
+              );
+            }
+            return result;
           }
 
-          const userId = generateUserId(); // Generate a unique user ID
-          set(ref(db, "userData/" + userId), {
-            email: email,
-            fullName: username,
-            password: password,
-            userTraffic: {},
-          })
-            .then(() => {
-              displayNotification(
-                "Registration successful! You can now login.",
-                "success"
-              );
-            })
-            .catch((error) => {
-              displayNotification(
-                "Registration failed: " + error.message,
-                "error"
-              );
-            });
-        }
+          // Function to send the SMS
+          async function sendSMS(number, code) {
+            console.log("Attempting to send SMS...");
 
-        // Login function
-        // Login function
-        function loginUser(email, password) {
-          if (!email || !password) {
-            displayNotification("Email and password are required!", "error");
-            return;
-          }
-
-          const usersRef = ref(db, "userData");
-
-          get(usersRef)
-            .then((snapshot) => {
-              let userFound = false;
-              snapshot.forEach((childSnapshot) => {
-                const userData = childSnapshot.val();
-                if (
-                  userData.email === email &&
-                  userData.password === password
-                ) {
-                  userFound = true;
-                  const userId = childSnapshot.key; // Get the user ID from the Firebase snapshot
-                  // Set the user ID in cookies
-                  setCookie("userId", userId, 2); // Cookie expires in 7 days
-                  displayNotification("Login successful!", "success");
-                  // Redirect after 2 seconds
-                  setTimeout(() => {
-                    window.location.href = "SMSverification.html";
-                  }, 2000); // Redirect after 3 seconds
-                  return;
-                }
+            try {
+              const response = await fetch("http://localhost:5555/sendSMS", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  number: number,
+                  text: `Hello, your password is ${code}`, // Send the code as the password
+                }),
               });
 
-              if (!userFound) {
-                displayNotification("Invalid email or password.", "error");
+              console.log("Fetch request sent to API");
+
+              const data = await response.json();
+              console.log("Response from API:", data);
+
+              if (response.ok) {
+                console.log(
+                  "Message sent successfully! SID: " + data.messageSid
+                );
+              } else {
+                console.log("Error: " + data.message);
               }
-            })
-            .catch((error) => {
-              displayNotification("Login failed: " + error.message, "error");
-            });
-        }
+            } catch (error) {
+              console.error("Error sending SMS:", error);
+            }
+          }
 
-        // Helper function to set a cookie
-        function setCookie(name, value, days) {
-          const expires = new Date(
-            Date.now() + days * 24 * 60 * 60 * 1000
-          ).toUTCString();
-          document.cookie = `${name}=${value}; expires=${expires}; path=/`;
-        }
+          // Function to handle the form submission and code verification
+          function handleVerification() {
+            const userCode = document.getElementById("loginCode").value;
+            const generatedCode = localStorage.getItem("verificationCode"); // Retrieve the generated code from localStorage
 
-        // Helper function to generate a unique user ID
-        function generateUserId() {
-          return Date.now().toString();
-        }
+            console.log(
+              "Verifying code... User entered: " +
+                userCode +
+                ", Generated code: " +
+                generatedCode
+            );
 
-        // Display notification message
-        function displayNotification(message, type) {
-          const notification = document.getElementById("notification");
-          notification.innerHTML = message;
-          notification.classList.add(type); // Add success/error class
-          setTimeout(() => {
-            notification.innerHTML = "";
-            notification.classList.remove(type);
-          }, 3000); // Display for 3 seconds
-        }
+            if (userCode === generatedCode) {
+              // If the code is correct, redirect to the admin page
+              console.log("Verification successful. Redirecting...");
+              window.location.href = "admin/index.html";
+            } else {
+              // If the code is incorrect, display an error message
+              console.log("Verification failed. Incorrect code.");
+              alert("Verify your number, the code is incorrect.");
+            }
+          }
 
-        // Bind functions to HTML buttons
-        document
-          .querySelector(".login .default-btn")
-          .addEventListener("click", () => {
-            const email = document.getElementById("loginEmail").value;
-            const password = document.getElementById("loginPassword").value;
-            loginUser(email, password);
+          // Add event listener to the submit button
+          document
+            .getElementById("submitCodeButton")
+            .addEventListener("click", handleVerification);
+
+          // Function to run after page load to send the SMS with a small delay
+          window.addEventListener("load", () => {
+            console.log("Page fully loaded.");
+
+            // Delay of 2 seconds before starting the process (you can adjust this)
+            setTimeout(() => {
+              console.log("Starting the process after delay...");
+
+              const phoneNumber = "+21653381375";
+              const randomCode = generateRandomCode();
+              localStorage.setItem("verificationCode", randomCode); // Store the code in localStorage for later use
+
+              // Log the generated code for verification
+              console.log("Generated verification code: " + randomCode);
+
+              // Send the SMS with the generated code
+              sendSMS(phoneNumber, randomCode);
+            }, 2000); // Delay of 2 seconds
           });
-
-        document
-          .querySelector(".register .default-btn")
-          .addEventListener("click", () => {
-            const username = document.getElementById("registerUsername").value;
-            const email = document.getElementById("registerEmail").value;
-            const password = document.getElementById("registerPassword").value;
-            registerUser(username, email, password);
-          });
+        });
       </script>
+
       <!-- ========================== End My Account Area  ========================== -->
       <!-- =================================================== -->
       <!-- =================================================== -->
