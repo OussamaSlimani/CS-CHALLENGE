@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>DASHMIN - Bootstrap Admin Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link
+      href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="container-fluid position-relative bg-white d-flex p-0">
+      <!-- Spinner Start -->
+      <div
+        id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+      >
+        <div
+          class="spinner-border text-primary"
+          style="width: 3rem; height: 3rem"
+          role="status"
+        >
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      <!-- Spinner End -->
+
+      <!-- Sidebar Start -->
+      <div class="sidebar pe-4 pb-3">
+        <nav class="navbar bg-light navbar-light">
+          <a href="index.html" class="navbar-brand mx-4 mb-3">
+            <h3 class="text-primary">
+              <!-- <i class="fa fa-hashtag me-2"> --></i>SMART-SHIELD
+            </h3>
+          </a>
+          <div class="d-flex align-items-center ms-4 mb-4">
+            <div class="position-relative">
+              <img
+                class="rounded-circle"
+                src="img/user.jpg"
+                alt=""
+                style="width: 40px; height: 40px"
+              />
+              <div
+                class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"
+              ></div>
+            </div>
+            <div class="ms-3">
+              <h6 class="mb-0">Jhon Doe</h6>
+              <span>Admin</span>
+            </div>
+          </div>
+          <div class="navbar-nav w-100">
+            <a href="index.html" class="nav-item nav-link "
+              ><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a
+            >
+            <a href="start.html" class="nav-item nav-link"
+              ><i class="fa fa-hashtag me-2"></i>Get Started</a
+            >
+            <a href="articles.html" class="nav-item nav-link"
+              ><i class="far fa-file-alt me-2"></i>Articles</a
+            >
+            <a href="chart.html" class="nav-item nav-link active"
+              ><i class="fa fa-chart-bar me-2"></i>Statistics</a
+            >
+            <a href="network.html" class="nav-item nav-link"
+              ><i class="fa fa-th me-2"></i>Network Traffics</a
+            >
+            <a href="models.html" class="nav-item nav-link"
+              ><i class="fa fa-keyboard me-2"></i>ML Models</a
+            >
+          </div>
+          <!-- Chatbot Button Start -->
+          <div class="navbar-nav w-100 mt-auto">
+            <a href="chatbot.html" class="nav-item nav-link">
+              <i class="fa fa-comments me-2"></i>Chatbot
+            </a>
+          </div>
+          <!-- Chatbot Button End -->
+        </nav>
+      </div>
+      <!-- Sidebar End -->
+
+      <!-- Content Start -->
+      <div class="content">
+        <!-- Navbar Start -->
+        <nav
+          class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0"
+        >
+          <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+            <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
+          </a>
+          <a href="#" class="sidebar-toggler flex-shrink-0">
+            <i class="fa fa-bars"></i>
+          </a>
+          <form class="d-none d-md-flex ms-4">
+            <input
+              class="form-control border-0"
+              type="search"
+              placeholder="Search"
+            />
+          </form>
+          <div class="navbar-nav align-items-center ms-auto">
+            
+            <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+              >
+                <i class="fa fa-bell me-lg-2"></i>
+                <span class="d-none d-lg-inline-flex">Notificatin</span>
+              </a>
+              <div
+                class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0"
+              >
+                <a href="#" class="dropdown-item">
+                  <h6 class="fw-normal mb-0">DDOS attack detected</h6>
+                  <small>15 minutes ago</small>
+                </a>
+                <hr class="dropdown-divider" />
+                <a href="#" class="dropdown-item">
+                  <h6 class="fw-normal mb-0">No fatal threats</h6>
+                  <small>30 minutes ago</small>
+                </a>
+                <hr class="dropdown-divider" />
+                <a href="#" class="dropdown-item text-center"
+                  >See all notifications</a
+                >
+              </div>
+            </div>
+            <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+              >
+                <img
+                  class="rounded-circle me-lg-2"
+                  src="img/user.jpg"
+                  alt=""
+                  style="width: 40px; height: 40px"
+                />
+                <span class="d-none d-lg-inline-flex">John Doe</span>
+              </a>
+              <div
+                class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0"
+              >
+                <!-- <a href="#" class="dropdown-item">My Profile</a>
+                <a href="#" class="dropdown-item">Settings</a> -->
+                <a href="#" class="dropdown-item">Log Out</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <!-- Navbar End -->
+
+        <!-- ================= Chart Start -->
+        <div class="container-fluid pt-4 px-4">
+          <div
+            class="row bg-light rounded align-items-center justify-content-center mx-0"
+          >
+            <div class="col-md-10">
+              <h3 class="text-center mb-4 mt-4">User Traffic</h3>
+
+              <!-- Dropdown to select feature -->
+              <div class="form-group">
+                <label for="featureSelect">Select Feature</label>
+                <select id="featureSelect" class="form-control">
+                  <option value="Sjit">Sjit</option>
+                  <option value="Sload">Sload</option>
+                  <option value="Stime">Stime</option>
+                  <option value="total_load">Total Load</option>
+                  <option value="ACK Flag Cnt">ACK Flag Cnt</option>
+                  <option value="Active Max">Active Max</option>
+                  <option value="Active Min">Active Min</option>
+                  <option value="Active Std">Active Std</option>
+                  <option value="Bwd Header Len">Bwd Header Len</option>
+                  <option value="Bwd IAT Max">Bwd IAT Max</option>
+                  <option value="Bwd IAT Min">Bwd IAT Min</option>
+                  <option value="Bwd IAT Std">Bwd IAT Std</option>
+                  <option value="Bwd Pkt Len Min">Bwd Pkt Len Min</option>
+                  <option value="Bwd Pktss">Bwd Pktss</option>
+                  <option value="Bwd Seg Size Avg">Bwd Seg Size Avg</option>
+                  <option value="DownUp Ratio">DownUp Ratio</option>
+                  <option value="Dst Port">Dst Port</option>
+                  <option value="FIN Flag Cnt">FIN Flag Cnt</option>
+                  <option value="Flow Bytss">Flow Bytss</option>
+                  <option value="Flow IAT Mean">Flow IAT Mean</option>
+                  <option value="Flow IAT Min">Flow IAT Min</option>
+                  <option value="Flow IAT Std">Flow IAT Std</option>
+                  <option value="Fwd Act Data Pkts">Fwd Act Data Pkts</option>
+                  <option value="Fwd IAT Std">Fwd IAT Std</option>
+                  <option value="Fwd PSH Flags">Fwd PSH Flags</option>
+                  <option value="Fwd Pkt Len Min">Fwd Pkt Len Min</option>
+                  <option value="Fwd Pkt Len Std">Fwd Pkt Len Std</option>
+                  <option value="Fwd Seg Size Avg">Fwd Seg Size Avg</option>
+                  <option value="Fwd Seg Size Min">Fwd Seg Size Min</option>
+                  <option value="Fwd URG Flags">Fwd URG Flags</option>
+                  <option value="Idle Max">Idle Max</option>
+                  <option value="Idle Min">Idle Min</option>
+                  <option value="Idle Std">Idle Std</option>
+                  <option value="Init Bwd Win Byts">Init Bwd Win Byts</option>
+                  <option value="Init Fwd Win Byts">Init Fwd Win Byts</option>
+                  <option value="PSH Flag Cnt">PSH Flag Cnt</option>
+                  <option value="Pkt Len Min">Pkt Len Min</option>
+                  <option value="Pkt Size Avg">Pkt Size Avg</option>
+                  <option value="Protocol">Protocol</option>
+                  <option value="RST Flag Cnt">RST Flag Cnt</option>
+                  <option value="Sload">Sload</option>
+                  <option value="Sjit">Sjit</option>
+                  <option value="Swin">Swin</option>
+                  <option value="tcp_seq_diff">tcp_seq_diff</option>
+                  <option value="tcp_setup_ratio">tcp_setup_ratio</option>
+                  <option value="tcprtt">tcprtt</option>
+                  <option value="total_load">total_load</option>
+                  <!-- Add other features as needed -->
+                </select>
+              </div>
+
+              <!-- Line chart for user traffic -->
+              <div class="chart-container mt-4">
+                <canvas id="trafficLineChart"></canvas>
+              </div>
+
+              <!-- Pie charts for predictions -->
+              <div class="row mt-4">
+                <div class="col-md-6">
+                  <h5 class="text-center">CIC_IDS_2018 Predictions</h5>
+                  <canvas id="cicPieChart"></canvas>
+                </div>
+                <div class="col-md-6">
+                  <h5 class="text-center">UNSW_NB15 Predictions</h5>
+                  <canvas id="unswPieChart"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <script type="module">
+          import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+          import {
+            getDatabase,
+            ref,
+            get,
+          } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+
+          // Firebase configuration
+          const firebaseConfig = {
+            apiKey: "AIzaSyC7inSQMpCJW7OJL6DdGSl386z56mupYAc",
+            authDomain: "cs-challenge-f4c13.firebaseapp.com",
+            databaseURL:
+              "https://cs-challenge-f4c13-default-rtdb.firebaseio.com",
+            projectId: "cs-challenge-f4c13",
+            storageBucket: "cs-challenge-f4c13.firebasestorage.app",
+            messagingSenderId: "657138044922",
+            appId: "1:657138044922:web:1f6d141e5a5f9f7e1b5e43",
+          };
+
+          const app = initializeApp(firebaseConfig);
+          const db = getDatabase(app);
+
+          // Function to get userId from cookie
+          function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(";").shift();
+            return null;
+          }
+
+          // Get DOM elements
+          const featureSelect = document.getElementById("featureSelect");
+          const trafficLineChartCtx = document
+            .getElementById("trafficLineChart")
+            .getContext("2d");
+          const cicPieChartCtx = document
+            .getElementById("cicPieChart")
+            .getContext("2d");
+          const unswPieChartCtx = document
+            .getElementById("unswPieChart")
+            .getContext("2d");
+
+          // Initialize charts
+          let trafficLineChart = new Chart(trafficLineChartCtx, {
+            type: "line",
+            data: {
+              labels: [],
+              datasets: [
+                {
+                  label: "Feature Value",
+                  data: [],
+                  borderColor: "blue",
+                  fill: false,
+                },
+              ],
+            },
+          });
+
+          let cicPieChart = new Chart(cicPieChartCtx, {
+            type: "pie",
+            data: { labels: [], datasets: [{ data: [], backgroundColor: [] }] },
+          });
+          let unswPieChart = new Chart(unswPieChartCtx, {
+            type: "pie",
+            data: { labels: [], datasets: [{ data: [], backgroundColor: [] }] },
+          });
+
+          async function loadData() {
+            const userId = getCookie("userId");
+            if (!userId) {
+              console.log("User ID not found in cookie");
+              return;
+            }
+
+            const snapshot = await get(
+              ref(db, `userData/${userId}/userTraffic`)
+            );
+            if (snapshot.exists()) {
+              const data = snapshot.val();
+
+              // Parse data for the last 6 entries
+              const dates = Object.keys(data).slice(-6);
+              const selectedFeature = featureSelect.value;
+              const featureValues = dates.map(
+                (date) => data[date][selectedFeature]
+              );
+
+              // Update line chart
+              trafficLineChart.data.labels = dates;
+              trafficLineChart.data.datasets[0].data = featureValues;
+              trafficLineChart.update();
+
+              // Parse data for CIC_IDS_2018 and UNSW_NB15 predictions
+              const cicPredictions = {};
+              const unswPredictions = {};
+
+              let hasPredictions = false; // Flag to check if there are any predictions
+
+              dates.forEach((date) => {
+                const detections = data[date]?.detections; // Safely access detections
+
+                if (
+                  detections &&
+                  detections.CIC_IDS_2018 &&
+                  detections.UNSW_NB15
+                ) {
+                  hasPredictions = true;
+
+                  // Collect unique categories for CIC_IDS_2018
+                  if (detections.CIC_IDS_2018 in cicPredictions) {
+                    cicPredictions[detections.CIC_IDS_2018] += 1;
+                  } else {
+                    cicPredictions[detections.CIC_IDS_2018] = 1;
+                  }
+
+                  // Collect unique categories for UNSW_NB15
+                  if (detections.UNSW_NB15 in unswPredictions) {
+                    unswPredictions[detections.UNSW_NB15] += 1;
+                  } else {
+                    unswPredictions[detections.UNSW_NB15] = 1;
+                  }
+                }
+              });
+
+              // Only update pie charts if there are predictions
+              if (hasPredictions) {
+                // Update CIC_IDS_2018 Pie Chart
+                updatePieChart(cicPieChart, cicPredictions);
+
+                // Update UNSW_NB15 Pie Chart
+                updatePieChart(unswPieChart, unswPredictions);
+              } else {
+                console.log("No predictions found for the selected dates.");
+              }
+            } else {
+              console.log("No data available for user");
+            }
+          }
+
+          // Helper function to update pie chart
+          function updatePieChart(chart, predictionData) {
+            const labels = Object.keys(predictionData);
+            const data = Object.values(predictionData);
+            const colors = generateColors(labels.length); // Function to generate dynamic colors
+
+            chart.data.labels = labels;
+            chart.data.datasets[0].data = data;
+            chart.data.datasets[0].backgroundColor = colors;
+            chart.update();
+          }
+
+          // Helper function to generate random colors for pie chart segments
+          function generateColors(num) {
+            const colors = [];
+            for (let i = 0; i < num; i++) {
+              const color = `hsl(${Math.random() * 360}, 100%, 50%)`;
+              colors.push(color);
+            }
+            return colors;
+          }
+
+          // Event listener for feature select dropdown
+          featureSelect.addEventListener("change", loadData);
+
+          // Initial data load
+          loadData();
+        </script>
+        <!-- ================= Chart Start -->
+
+        <!-- Chart End -->
+
+        <!-- Footer Start -->
+        <div class="container-fluid pt-4 px-4">
+          <div class="bg-light rounded-top p-4">
+            <div class="row">
+              <div class="col-12 col-sm-6 text-center text-sm-start">
+                &copy; <a href="#">SMART-SHIELD</a>, All Right Reserved.
+              </div>
+              <div class="col-12 col-sm-6 text-center text-sm-end">
+                <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                Designed By <a href="https://htmlcodex.com">IEEE CS ENIS SBC</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Footer End -->
+      </div>
+      <!-- Content End -->
+
+      <!-- Back to Top -->
+      <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
+        ><i class="bi bi-arrow-up"></i
+      ></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/chart/chart.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

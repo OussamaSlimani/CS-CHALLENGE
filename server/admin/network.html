@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>DASHMIN - Bootstrap Admin Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link
+      href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="container-fluid position-relative bg-white d-flex p-0">
+      <!-- Spinner Start -->
+      <div
+        id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+      >
+        <div
+          class="spinner-border text-primary"
+          style="width: 3rem; height: 3rem"
+          role="status"
+        >
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      <!-- Spinner End -->
+
+      < <!-- Sidebar Start -->
+      <div class="sidebar pe-4 pb-3">
+        <nav class="navbar bg-light navbar-light">
+          <a href="index.html" class="navbar-brand mx-4 mb-3">
+            <h3 class="text-primary">
+              <!-- <i class="fa fa-hashtag me-2"> --></i>SMART-SHIELD
+            </h3>
+          </a>
+          <div class="d-flex align-items-center ms-4 mb-4">
+            <div class="position-relative">
+              <img
+                class="rounded-circle"
+                src="img/user.jpg"
+                alt=""
+                style="width: 40px; height: 40px"
+              />
+              <div
+                class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"
+              ></div>
+            </div>
+            <div class="ms-3">
+              <h6 class="mb-0">Jhon Doe</h6>
+              <span>Admin</span>
+            </div>
+          </div>
+          <div class="navbar-nav w-100">
+            <a href="index.html" class="nav-item nav-link "
+              ><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a
+            >
+            <a href="start.html" class="nav-item nav-link"
+              ><i class="fa fa-hashtag me-2"></i>Get Started</a
+            >
+            <a href="articles.html" class="nav-item nav-link"
+              ><i class="far fa-file-alt me-2"></i>Articles</a
+            >
+            <a href="chart.html" class="nav-item nav-link"
+              ><i class="fa fa-chart-bar me-2"></i>Statistics</a
+            >
+            <a href="network.html" class="nav-item nav-link active"
+              ><i class="fa fa-th me-2"></i>Network Traffics</a
+            >
+            <a href="models.html" class="nav-item nav-link"
+              ><i class="fa fa-keyboard me-2"></i>ML Models</a
+            >
+          </div>
+          <!-- Chatbot Button Start -->
+          <div class="navbar-nav w-100 mt-auto">
+            <a href="chatbot.html" class="nav-item nav-link">
+              <i class="fa fa-comments me-2"></i>Chatbot
+            </a>
+          </div>
+          <!-- Chatbot Button End -->
+        </nav>
+      </div>
+      <!-- Sidebar End -->
+
+      <!-- Content Start -->
+      <div class="content">
+        <!-- Navbar Start -->
+        <nav
+          class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0"
+        >
+          <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+            <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
+          </a>
+          <a href="#" class="sidebar-toggler flex-shrink-0">
+            <i class="fa fa-bars"></i>
+          </a>
+          <form class="d-none d-md-flex ms-4">
+            <input
+              class="form-control border-0"
+              type="search"
+              placeholder="Search"
+            />
+          </form>
+          <div class="navbar-nav align-items-center ms-auto">
+            
+            <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+              >
+                <i class="fa fa-bell me-lg-2"></i>
+                <span class="d-none d-lg-inline-flex">Notificatin</span>
+              </a>
+              <div
+                class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0"
+              >
+                <a href="#" class="dropdown-item">
+                  <h6 class="fw-normal mb-0">DDOS attack detected</h6>
+                  <small>15 minutes ago</small>
+                </a>
+                <hr class="dropdown-divider" />
+                <a href="#" class="dropdown-item">
+                  <h6 class="fw-normal mb-0">No fatal threats</h6>
+                  <small>30 minutes ago</small>
+                </a>
+                <hr class="dropdown-divider" />
+                <a href="#" class="dropdown-item text-center"
+                  >See all notifications</a
+                >
+              </div>
+            </div>
+            <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+              >
+                <img
+                  class="rounded-circle me-lg-2"
+                  src="img/user.jpg"
+                  alt=""
+                  style="width: 40px; height: 40px"
+                />
+                <span class="d-none d-lg-inline-flex">John Doe</span>
+              </a>
+              <div
+                class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0"
+              >
+                <!-- <a href="#" class="dropdown-item">My Profile</a>
+                <a href="#" class="dropdown-item">Settings</a> -->
+                <a href="#" class="dropdown-item">Log Out</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <!-- Navbar End -->>
+        <!-- Table Start -->
+        <div class="container-fluid pt-4 px-4">
+          <div class="row g-4">
+            <div class="col-12">
+              <div class="bg-light rounded h-100 p-4">
+                <h6 class="mb-4">User Traffic Data</h6>
+                <div class="table-responsive" style="overflow-y: auto">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Timestamp</th>
+                        <th scope="col">ACK Flag Count</th>
+                        <th scope="col">Active Max</th>
+                        <th scope="col">Active Min</th>
+                        <th scope="col">Active Std</th>
+                        <th scope="col">Bwd Header Len</th>
+                        <th scope="col">Bwd IAT Max</th>
+                        <th scope="col">Bwd IAT Min</th>
+                        <th scope="col">Bwd IAT Std</th>
+                        <th scope="col">Bwd Pkt Len Min</th>
+                        <th scope="col">Bwd Pktss</th>
+                        <th scope="col">Bwd Seg Size Avg</th>
+                        <th scope="col">DownUp Ratio</th>
+                        <th scope="col">Dst Port</th>
+                        <th scope="col">FIN Flag Count</th>
+                        <th scope="col">Flow Bytss</th>
+                        <th scope="col">Flow IAT Mean</th>
+                        <th scope="col">Flow IAT Min</th>
+                        <th scope="col">Flow IAT Std</th>
+                        <th scope="col">Fwd Act Data Pkts</th>
+                        <th scope="col">Fwd IAT Std</th>
+                        <th scope="col">Fwd PSH Flags</th>
+                        <th scope="col">Fwd Pkt Len Min</th>
+                        <th scope="col">Fwd Pkt Len Std</th>
+                        <th scope="col">Fwd Seg Size Avg</th>
+                        <th scope="col">Fwd Seg Size Min</th>
+                        <th scope="col">Fwd URG Flags</th>
+                        <th scope="col">Idle Max</th>
+                        <th scope="col">Idle Min</th>
+                        <th scope="col">Idle Std</th>
+                        <th scope="col">Init Bwd Win Byts</th>
+                        <th scope="col">Init Fwd Win Byts</th>
+                        <th scope="col">PSH Flag Count</th>
+                        <th scope="col">Pkt Len Min</th>
+                        <th scope="col">Pkt Size Avg</th>
+                        <th scope="col">Protocol</th>
+                        <th scope="col">RST Flag Count</th>
+                        <th scope="col">Sjit</th>
+                        <th scope="col">Sload</th>
+                        <th scope="col">Stime</th>
+                        <th scope="col">URG Flag Count</th>
+                        <th scope="col">Byte Pkt Interaction Dst</th>
+                        <th scope="col">Byte Ratio</th>
+                        <th scope="col">CT Dst LTM</th>
+                        <th scope="col">CT Dst Src LTM</th>
+                        <th scope="col">CT Src LTM</th>
+                        <th scope="col">CT Srv Dst</th>
+                        <th scope="col">CT Srv Src</th>
+                        <th scope="col">Dbytes</th>
+                        <th scope="col">Duration</th>
+                        <th scope="col">Inter Pkt Ratio</th>
+                        <th scope="col">Jit Ratio</th>
+                        <th scope="col">Load Jit Interaction Dst</th>
+                        <th scope="col">Sbytes</th>
+                        <th scope="col">Smeansz</th>
+                        <th scope="col">Swin</th>
+                        <th scope="col">TCP Seq Diff</th>
+                        <th scope="col">TCP Setup Ratio</th>
+                        <th scope="col">TcpRTT</th>
+                        <th scope="col">Total Load</th>
+                      </tr>
+                    </thead>
+                    <tbody id="trafficTable">
+                      <!-- Data rows will be added here dynamically -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Table End -->
+        <script type="module">
+          // Import necessary Firebase SDKs
+          import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+          import {
+            getDatabase,
+            ref,
+            get,
+          } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+
+          // Firebase configuration
+          const firebaseConfig = {
+            apiKey: "AIzaSyC7inSQMpCJW7OJL6DdGSl386z56mupYAc",
+            authDomain: "cs-challenge-f4c13.firebaseapp.com",
+            databaseURL:
+              "https://cs-challenge-f4c13-default-rtdb.firebaseio.com",
+            projectId: "cs-challenge-f4c13",
+            storageBucket: "cs-challenge-f4c13.firebasestorage.app",
+            messagingSenderId: "657138044922",
+            appId: "1:657138044922:web:1f6d141e5a5f9f7e1b5e43",
+          };
+
+          // Initialize Firebase
+          const app = initializeApp(firebaseConfig);
+          const db = getDatabase(app);
+
+          // Function to get userId from cookie
+          function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(";").shift();
+            return null;
+          }
+
+          // Function to fetch data and populate the table for user traffic
+          async function loadUserTraffic() {
+            try {
+              const userId = getCookie("userId"); // Get the userId from cookie
+              if (!userId) {
+                console.log("User ID not found in cookie");
+                return;
+              }
+
+              const dbRef = ref(db, `userData/${userId}/userTraffic`);
+              const snapshot = await get(dbRef);
+              if (snapshot.exists()) {
+                const data = snapshot.val();
+
+                // Get the table body element
+                const tableBody = document.querySelector("#trafficTable");
+
+                // Loop through the data and populate the table rows
+                for (const timestamp in data) {
+                  const traffic = data[timestamp];
+
+                  // Create a new row
+                  const row = document.createElement("tr");
+
+                  // Add a cell for timestamp
+                  const timestampCell = document.createElement("td");
+                  timestampCell.textContent = timestamp;
+                  row.appendChild(timestampCell);
+
+                  // Loop through the traffic fields and add each to the row
+                  for (const key in traffic) {
+                    // Skip 'detections' field
+                    if (key === "detections") continue;
+
+                    const cell = document.createElement("td");
+                    if (typeof traffic[key] === "object") {
+                      // Handle nested objects (like detections)
+                      cell.textContent = JSON.stringify(traffic[key]);
+                    } else {
+                      cell.textContent = traffic[key];
+                    }
+                    row.appendChild(cell);
+                  }
+
+                  // Append the row to the table body
+                  tableBody.appendChild(row);
+                }
+              } else {
+                console.log("No traffic data found for this user.");
+              }
+            } catch (error) {
+              console.error("Error loading user traffic:", error);
+            }
+          }
+
+          // Call the function to load traffic data when the page loads
+          loadUserTraffic();
+        </script>
+        <!-- Table End -->
+
+        <!-- Footer Start -->
+        <div class="container-fluid pt-4 px-4">
+          <div class="bg-light rounded-top p-4">
+            <div class="row">
+              <div class="col-12 col-sm-6 text-center text-sm-start">
+                &copy; <a href="#">SMART-SHIELD</a>, All Right Reserved.
+              </div>
+              <div class="col-12 col-sm-6 text-center text-sm-end">
+                <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                Designed By <a href="https://htmlcodex.com">IEEE CS ENIS SBC</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Footer End -->
+      </div>
+      <!-- Content End -->
+
+      <!-- Back to Top -->
+      <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
+        ><i class="bi bi-arrow-up"></i
+      ></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/chart/chart.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
