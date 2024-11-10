@@ -1,0 +1,25 @@
+Name,Description
+dur,Flow duration
+sbytes,Source-to-destination bytes
+dbytes,Destination-to-source bytes
+Sload,Source-to-destination load
+swin,Source TCP window size
+smeansz,Source packet size mean
+Sjit,Source jitter (msec)
+Stime,Source packet inter-arrival time
+tcprtt,TCP round trip time
+ct_srv_src,Connection count per service from source
+ct_srv_dst,Connection count per service to destination
+ct_dst_ltm,Connection count to destination (last time)
+ct_src_ltm,Connection count from source (last time)
+ct_dst_src_ltm,Connection count between source and destination (last time)
+duration,Duration of the session
+byte_ratio,Ratio of bytes between source and destination
+jit_ratio,Ratio of jitter between source and destination
+inter_pkt_ratio,Ratio of inter-packet arrival times between source and destination
+tcp_setup_ratio,Ratio of successful TCP setups between source and destination
+total_load,Total load in the flow
+byte_pkt_interaction_dst,Interaction of bytes and packets at the destination
+load_jit_interaction_dst,Interaction of load and jitter at the destination
+tcp_seq_diff,Difference between TCP sequence numbers
+attack_cat,The attack type
