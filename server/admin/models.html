@@ -40,6 +40,68 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
+
+    <style>
+      /*** models ***/
+  /* Container styling */
+  .services {
+    background-color: #f8f9fa; /* Light background */
+    border-radius: 10px;
+    padding: 30px;
+  }
+
+  /* Title styling */
+  .services h2 {
+    color: #007bff;
+    font-weight: bold;
+  }
+
+  /* Service card (model description) styling */
+  .service-card {
+    padding: 15px;
+    background: var(--surface-color, #ffffff);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border: 1px solid #ddd; /* Border for cards */
+  }
+
+  .service-card:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Icon styling */
+  .service-card .icon {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    background: rgba(0, 123, 255, 0.1); /* Light accent color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #007bff;
+    font-size: 28px;
+  }
+
+  /* Model title styling */
+  .model-title {
+    font-size: 18px;
+    color: #007bff;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  /* Description and info styling */
+  .model-description {
+    color: #333;
+    margin-bottom: 8px;
+  }
+
+  .model-info {
+    color: #555;
+    font-size: 14px;
+  }
+    </style>
   </head>
 
   <body>
@@ -189,17 +251,64 @@
         </nav>
         <!-- Navbar End -->
 
-        <!-- Blank Start -->
-        <div class="container-fluid pt-4 px-4">
-          <div
-            class="row bg-light rounded align-items-center justify-content-center mx-0"
-          >
-            <div class="col-md-6 text-center">
-              <h3>description models accuracy architecture etc</h3>
+        <!-- Models Description Start -->
+        <div class="container-fluid services pt-4 px-4">
+          <div class="bg-light text-center rounded p-4">
+            <!-- Title Section -->
+            <h2 class="mb-4 text-primary">Model Descriptions and Performance</h2>
+
+            <!-- Model Descriptions -->
+            <div class="row g-4">
+              <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-card d-flex">
+                  <div class="icon flex-shrink-0">
+                    <i class="bi bi-diagram-3"></i>
+                  </div>
+                  <div>
+                    <h3 class="model-title">Model 1</h3>
+                    <p class="model-description">This is a brief description of Model 1, focusing on its purpose, key features, and any unique aspects.</p>
+                    <p class="model-info"><strong>Accuracy:</strong> 95%</p>
+                    <p class="model-info"><strong>Architecture:</strong> Convolutional Neural Network (CNN)</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-card d-flex">
+                  <div class="icon flex-shrink-0">
+                    <i class="bi bi-easel"></i>
+                  </div>
+                  <div>
+                    <h3 class="model-title">Model 2</h3>
+                    <p class="model-description">Model 2 is optimized for speed and accuracy in image classification. It uses a combination of CNN and RNN layers.</p>
+                    <p class="model-info"><strong>Accuracy:</strong> 93%</p>
+                    <p class="model-info"><strong>Architecture:</strong> CNN + RNN</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-card d-flex">
+                  <div class="icon flex-shrink-0">
+                    <i class="bi bi-clipboard-data"></i>
+                  </div>
+                  <div>
+                    <h3 class="model-title">Model 3</h3>
+                    <p class="model-description">Model 3 excels in high-dimensional data processing. It is designed with transformer-based layers for sequential data analysis.</p>
+                    <p class="model-info"><strong>Accuracy:</strong> 97%</p>
+                    <p class="model-info"><strong>Architecture:</strong> Transformer</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <!-- Blank End -->
+        <!-- Models Description End -->
+
+
+
+
+
 
         <!-- Footer Start -->
         <div class="container-fluid pt-4 px-4">
