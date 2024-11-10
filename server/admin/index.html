@@ -262,8 +262,9 @@
                 <thead>
                   <tr class="text-dark">
                     <th scope="col">Date</th>
-                    <th scope="col">Model 1</th>
-                    <th scope="col">Model 2</th>
+                    <th scope="col">UNSW_NB15</th>
+                    <th scope="col">CIC_IDS_2018</th>
+                    <th scope="col">KDD</th>
                     <th scope="col">Status</th>
                     <th scope="col">Action</th>
                   </tr>
@@ -327,96 +328,159 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    <script type="module">
-      // Import necessary Firebase SDKs
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-      import {
-        getDatabase,
-        ref,
-        get,
-      } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
-  
+   <script type="module">
+  // Import Firebase SDKs
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+  import {
+    getDatabase,
+    ref,
+    get,
+  } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
 
-      // Firebase configuration
-      const firebaseConfig = {
-        apiKey: "pjvCKtxi7nPghpIVtSQiVsve5OAVi97eSJzhKpIO",
-        authDomain: "cs-challenge-f4c13.firebaseapp.com",
-        databaseURL: "https://cs-challenge-f4c13-default-rtdb.firebaseio.com",
-        projectId: "cs-challenge-f4c13",
-        storageBucket: "cs-challenge-f4c13.appspot.com", // Fixed storage bucket URL
-        messagingSenderId: "657138044922",
-        appId: "1:657138044922:web:1f6d141e5a5f9f7e1b5e43",
-      };
-    
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      const db = getDatabase(app);
-    
-      // Define userId or fetch it if needed
-      const userId = "exampleUserId"; // Replace this with the actual logic to retrieve userId
-    
-      // Function to fetch and display articles with limited text size and Read More button
-      async function loadArticles() {
-        try {
-          // Get user data from Firebase
-          const userDataSnapshot = await get(ref(db, `userData/${userId}`));
-          const userData = userDataSnapshot.val();
-          const fullName = userData ? userData.fullName : "Unknown User"; // Get user's full name
-    
-          // Get articles data from Firebase
-          const articlesSnapshot = await get(ref(db, "articles"));
-          const articles = articlesSnapshot.val();
-    
-          if (articles) {
-            // Empty the article list before populating
-            const articleList = document.getElementById("articleList");
-            articleList.innerHTML = "";
-    
-            // Loop through the articles and display them
-            for (const articleId in articles) {
-              const article = articles[articleId];
-              const shortText =
-                article.text.length > 200 
-                  ? article.text.substring(0, 200) + "..."
-                  : article.text;
-    
-              const articleElement = document.createElement("div");
-              articleElement.classList.add("article-item", "p-4", "mb-4", "rounded", "shadow-sm");
-    
-              // Populate article HTML content with updated styles
-              articleElement.innerHTML = `
-                <div class="article-content">
-                  <h5 class="article-title mb-3 text-dark font-weight-bold">${
-                    article.title
-                  }</h5>
-                  <p class="article-text text-muted">${shortText}</p>
-                  <div class="article-meta mt-3 d-flex align-items-center">
-                    <div class="me-3">
-                      <h6 class="author-name text-primary mb-1">${fullName}</h6>
-                      <p class="article-date text-muted small"><i class="fas fa-calendar-alt"></i> ${new Date(
-                        article.date
-                      ).toLocaleDateString()}</p>
-                    </div>
-                    <a href="fullArticle.html?id=${articleId}" class="btn btn-primary btn-sm read-more-btn ms-auto">Read More</a>
-                  </div>
-                </div>
-              `;
-    
-              // Append article to the list
-              articleList.appendChild(articleElement);
-            }
-          } else {
-            console.log("No articles found.");
-          }
-        } catch (error) {
-          console.error("Error fetching articles: ", error);
-        }
+  // Firebase configuration
+  const firebaseConfig = {
+    apiKey: "pjvCKtxi7nPghpIVtSQiVsve5OAVi97eSJzhKpIO",
+    authDomain: "cs-challenge-f4c13.firebaseapp.com",
+    databaseURL: "https://cs-challenge-f4c13-default-rtdb.firebaseio.com",
+    projectId: "cs-challenge-f4c13",
+    storageBucket: "cs-challenge-f4c13.appspot.com",
+    messagingSenderId: "657138044922",
+    appId: "1:657138044922:web:1f6d141e5a5f9f7e1b5e43",
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+  // Get userId from cookie
+  function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(";").shift();
+    return null;
+  }
+
+  // Function to fetch and populate user traffic data
+  async function loadUserDetections() {
+    try {
+      const userId = getCookie("userId"); // Get userId from cookie
+      if (!userId) {
+        console.log("User ID not found in cookie");
+        return;
       }
-    
-      // Load articles when the page is ready
-      window.onload = function () {
-        loadArticles();
-      };
-    </script>
+
+      const dbRef = ref(db, `userData/${userId}/userTraffic`);
+      const snapshot = await get(dbRef);
+      if (snapshot.exists()) {
+        const data = snapshot.val();
+        const tableBody = document.getElementById("detections-table-body");
+        tableBody.innerHTML = ""; // Clear existing rows
+
+        const detectionEntries = Object.keys(data)
+          .map((date) => ({ date, ...data[date] }))
+          .sort((a, b) => new Date(b.date) - new Date(a.date)); // Sort by date (newest first)
+        const latestDetections = detectionEntries.slice(0, 20);
+
+ // Populate the table with the latest 10 detections
+latestDetections.forEach((entry) => {
+  const model1Prediction = entry.detections ? entry.detections.UNSW_NB15 : "No Data";
+  const model2Prediction = entry.detections ? entry.detections.CIC_IDS_2018 : "No Data";
+  const model3Prediction = entry.detections ? entry.detections.KDD : "No Data";
+
+  // Skip this entry if there is no data for any model
+  if (model1Prediction === "No Data" && model2Prediction === "No Data" && model3Prediction === "No Data") {
+    return; // Skip this iteration
+  }
+
+  const row = document.createElement("tr");
+
+  // Check if at least one model has data
+  const predictionResult = (model1Prediction === "normal" && model2Prediction === "Benign" && model3Prediction === "normal")
+    ? "Normal" : "Suspicious";
+
+  row.innerHTML = `
+    <td>${entry.date}</td>
+    <td>${model1Prediction}</td>
+    <td>${model2Prediction}</td>
+    <td>${model3Prediction}</td>
+    <td>${predictionResult}</td>
+    <td>
+      <a class="btn btn-sm btn-primary" href="">Detail</a>
+    </td>
+  `;
+
+  tableBody.appendChild(row);
+});
+
+      } else {
+        console.log("No data available for this user");
+      }
+    } catch (error) {
+      console.error("Error reading data:", error);
+    }
+  }
+
+  // Function to fetch and display articles with limited text size and "Read More" button
+  async function loadArticles() {
+    try {
+      const userId = getCookie("userId");
+      if (!userId) {
+        console.log("User ID not found in cookie");
+        return;
+      }
+
+      const userDataSnapshot = await get(ref(db, `userData/${userId}`));
+      const userData = userDataSnapshot.val();
+      const fullName = userData ? userData.fullName : "Unknown User";
+
+      const articlesSnapshot = await get(ref(db, "articles"));
+      const articles = articlesSnapshot.val();
+
+      if (articles) {
+        const articleList = document.getElementById("articleList");
+        articleList.innerHTML = ""; // Clear existing articles
+
+        for (const articleId in articles) {
+          const article = articles[articleId];
+          const shortText =
+            article.text.length > 200 ? article.text.substring(0, 200) + "..." : article.text;
+
+          const articleElement = document.createElement("div");
+          articleElement.classList.add("article-item", "p-4", "mb-4", "rounded", "shadow-sm");
+          articleElement.innerHTML = `
+            <div class="article-content">
+              <h5 class="article-title mb-3 text-dark font-weight-bold">${article.title}</h5>
+              <p class="article-text text-muted">${shortText}</p>
+              <div class="article-meta mt-3 d-flex align-items-center">
+                <div class="me-3">
+                  <h6 class="author-name text-primary mb-1">${fullName}</h6>
+                  <p class="article-date text-muted small"><i class="fas fa-calendar-alt"></i> ${new Date(
+                    article.date
+                  ).toLocaleDateString()}</p>
+                </div>
+                <a href="fullArticle.html?id=${articleId}" class="btn btn-primary btn-sm read-more-btn ms-auto">Read More</a>
+              </div>
+            </div>
+          `;
+          articleList.appendChild(articleElement);
+        }
+      } else {
+        console.log("No articles found.");
+      }
+    } catch (error) {
+      console.error("Error fetching articles:", error);
+    }
+  }
+
+  // Load data when the page is ready
+  window.onload = function () {
+    loadUserDetections();
+    loadArticles();
+  };
+</script>
+
      </body>
 </html>
+
+
+
